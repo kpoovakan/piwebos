@@ -40,6 +40,8 @@ body {
     background-color: var(--colorBackground);
     box-shadow: 0px 0px 13px 3px var(--colorAccent);
     position: absolute;
+    top: 13px;
+    left: 13px;
     z-index: 314159;
     display: block;
 }
@@ -121,4 +123,24 @@ body {
 
 .close:hover {
     cursor: pointer;
+}
+
+.gamesDiv {
+    display: flex;
+    margin: 31px;
+    float: right;
+}
+
+.games {
+    margin: 13px;
+    border-radius: 3px;
+    border: 2px solid var(--colorAccent);
+    transition: transform 0.2s;
+    width: 100%;
+    height: 100%;
+}
+
+.games:hover {
+    cursor: pointer;
+    transform: scale(1.25);
 }

@@ -34,13 +34,16 @@ window.addEventListener("load", function() {
 
     //event listeners to open apps
     document.getElementById("pi").addEventListener("click", function() {
-    document.getElementById("divPi").style.display = "block";
+        document.getElementById("divPi").style.display = "block";
+        hideHint();
     });
     document.getElementById("cool").addEventListener("click", function() {
         document.getElementById("divKpoovakan").style.display = "block";
+        hideHint();
     });
     document.getElementById("music").addEventListener("click", function() {
         document.getElementById("divMusic").style.display = "block";
+        hideHint();
     });
 });
 

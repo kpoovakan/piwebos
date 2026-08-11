@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>pi - web OS - kpoovakan</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,26 +10,45 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <div id="divPi">
+        <div id="divPi" style="display: none;">
             <div id="divPiHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Pi')"/><p>digits of pi</p></div>
             <div id="divPiElements">
-                <p>3.1415926535897932384626433...</p>
+                <p style="width: 100%; text-align: right;">
+                    <a href="/pumpkinpi">pi memorizing game</a>⠀⠀
+                    <a href="https://turbowarp.org/1285004431/fullscreen">pie baking game</a></p>
+                <p>The first <a href="https://3.141592653.com/">314 digits of pi</a>: <br>
+                    3.14159265358979323846264338327950288419716939937510
+                    <br>58209749445923078164062862089986280348253421170679
+                    <br>82148086513282306647093844609550582231725359408128
+                    <br>48111745028410270193852110555964462294895493038196
+                    <br>44288109756659334461284756482337867831652712019091
+                    <br>45648566923460348610454326648213393607260249141273
+                    <br>72458700660631...
+                </p>
             </div>
         </div>
 
-        <div id="divKpoovakan">
+        <div id="divKpoovakan" style="display: none;">
             <div id="divKpoovakanHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Kpoovakan')"/><p>kpoovakan</p></div>
             <div id="divKpoovakanElements">
-                <p>link to my website</p>
-                <p>link to Stickytab</p>
-                <p>games</p>
+                <p style="width: 100%; text-align: right;">more cool stuff --> <a href="/">kpoovakan.github.io</a></p>
+                <div class="gamesDiv">
+                    <a href="/harvest" class="games"><img src="https://uploads.scratch.mit.edu/get_image/project/1210100138_480x360.png"></a>
+                    <a href="https://turbowarp.org/1285004431/fullscreen" class="games"><img src="https://uploads.scratch.mit.edu/get_image/project/1285004431_480x360.png"></a>
+                    <a href="https://turbowarp.org/1351487347/fullscreen" class="games"><img src="https://uploads.scratch.mit.edu/get_image/project/1351487347_480x360.png"></a>
+                </div>
             </div>
         </div>
 
-        <div id="divMusic">
-            <div id="divMusicHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Music')"/><p>piano Music</p></div>
+        <div id="divMusic" style="display: none; height: 70vh; overflow: auto;">
+            <div id="divMusicHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Music')"/><p>piano pieces</p></div>
             <div id="divMusicElements">
-                <p>figger out how to play mp3 files</p>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/0/08/Bach%2C_J_S_-_Goldberg_Variations%2C_BWV988_-_02._Variation_1_%28Shelley_Katz%29.flac?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">Bach Goldberg Variation 1 played by Shelley Katz</a><br>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/d/d4/Beethoven_Moonlight_3rd_movement.ogg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">Beethoven Moonlight Sonata Op.27 No.2 3rd Mvt played by Bernd Krueger</a><br>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/6/62/Chopin_-_12_%C3%89tudes%2C_Op._10_-_No._4_in_C-Sharp_minor_%27Torrent%27_%28Edward_Neeman%29.flac?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">Chopin Etude Op.10 No.4 "Torrent" played by Edward Neeman</a><br>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/c/ce/Chopin_-_12_%C3%89tudes%2C_Op._25_-_No._9_in_G-Flat_major_%27Butterfly_Wings%27_%28Edward_Neeman%29.flac?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">Chopin Etude Op.25 No.9 "Butterfly" played by Edward Neeman</a><br>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/1/19/Chopin_-_12_%C3%89tudes%2C_Op._25_-_No._11_in_A_minor_%27Winter_Wind%27_%28Edward_Neeman%29.flac?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">Chopin Etude Op.25 No.11 "Winter Wind" played by Edward Neeman</a><br>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/a/ad/Nikolai_Rimsky-Korsakov_-_Bumblebee.ogg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">Rimsky-Korsakov Flight of the Bumblebee played by Neal and Nancy O'Doan</a><br>
             </div>
         </div>
 
