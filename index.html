@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pi - web OS - kpoovakan</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="divPi">
+            <div id="divPiHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Pi')"/><p>digits of pi</p></div>
+            <div id="divPiElements">
+                <p>3.1415926535897932384626433...</p>
+            </div>
+        </div>
+
+        <div id="divKpoovakan">
+            <div id="divKpoovakanHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Kpoovakan')"/><p>kpoovakan</p></div>
+            <div id="divKpoovakanElements">
+                <p>link to my website</p>
+                <p>link to Stickytab</p>
+                <p>games</p>
+            </div>
+        </div>
+
+        <div id="divMusic">
+            <div id="divMusicHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Music')"/><p>piano Music</p></div>
+            <div id="divMusicElements">
+                <p>figger out how to play mp3 files</p>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <p><a href="/">kpoovakan.github.io</a></p>
+            <p id="date"></p>
+            <p id="time"></p>
+            <img src="Music.svg" alt="play music" id="music" />
+            <img src="Pi.svg" alt="explore pi" id="pi" />
+            <img src="Kpoovakan.svg" alt="cool stuff" id="cool" />
+            <p id="hint">psst.. those icons open the apps --> </p>
+        </div>
+    </body>
+</html>

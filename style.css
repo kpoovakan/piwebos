@@ -1,0 +1,124 @@
+:root {
+    --colorBackground: #17252b;
+    --colorForeground: #cee8f3;
+    --colorAccent: #add8eb;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--colorBackground);
+    color: var(--colorForeground);
+    display: block;
+    background-image: url(background.png);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    overflow: hidden;
+    font-size: 18px;
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+    a:link, a:visited {
+        color: var(--colorAccent);
+        font-weight: 600;
+        text-decoration: none;
+    }
+    a:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+#divPi, #divKpoovakan, #divMusic {
+    outline: none;
+    border: 3px solid var(--colorForeground);
+    border-radius: 3px;
+    width: fit-content;
+    padding: 0;
+    background-color: var(--colorBackground);
+    box-shadow: 0px 0px 13px 3px var(--colorAccent);
+    position: absolute;
+    z-index: 314159;
+    display: block;
+}
+
+#divPiHeader, #divKpoovakanHeader, #divMusicHeader {
+    background-color: var(--colorAccent);
+    color: var(--colorBackground);
+    width: 100%;
+    display: block;
+    padding: 3px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+#divPiHeader p, #divKpoovakanHeader p, #divMusicHeader p {
+    margin: 0;
+}
+
+#divPiElements, #divKpoovakanElements, #divMusicElements {
+    margin: 13px;
+}
+
+.bottom {
+    outline: none;
+    border: none;
+    padding: 3px;
+    border-radius: 0;
+    margin: 0;
+    background-color: transparent;
+    color: var(--colorForeground);
+    box-shadow: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.bottom p {
+    padding: 0 13px;
+}
+
+#music, #pi, #cool {
+    margin: inherit;
+    margin-right: 13px;
+    height: 18px;
+    vertical-align: middle;
+    align-self: center;
+}
+
+#music:hover, #pi:hover, #cool:hover {
+    cursor: pointer;
+}
+
+#hint {
+    color: color-mix(in oklab, #ffffff00 50%, var(--colorAccent));
+}
+
+.hintHide {
+    animation-name: hintHide;
+    animation-duration: 0.314s;
+}
+
+@keyframes hintHide {
+    from {
+        color: color-mix(in oklab, #ffffff00 50%, var(--colorAccent));
+    }
+    to {
+        color: transparent;
+    }
+}
+
+.close {
+    padding: 0;
+    margin: 0px 3px;
+    height: 13px;
+    width: auto;
+}
+
+.close:hover {
+    cursor: pointer;
+}
