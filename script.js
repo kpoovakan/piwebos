@@ -34,11 +34,15 @@ window.addEventListener("load", function() {
 
     //event listeners to open apps
     document.getElementById("pi").addEventListener("click", function() {
-        document.getElementById("divPi").style.display = "block";
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divPi").style.display;
+        document.getElementById("divPi").style.display = switchDisplay[thisCurrent];
         hideHint();
     });
     document.getElementById("cool").addEventListener("click", function() {
-        document.getElementById("divKpoovakan").style.display = "block";
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divKpoovakan").style.display;
+        document.getElementById("divKpoovakan").style.display = switchDisplay[thisCurrent];
         hideHint();
     });
     document.getElementById("music").addEventListener("click", function() {
@@ -87,7 +91,7 @@ function dragElement(elmnt) {
 function hideHint() {
     document.getElementById("hint").setAttribute("class", "hintHide");
     document.getElementById("hint").addEventListener("animationend", function() {
-        document.getElementById("hint").remove();
+        document.getElementById("hint").style.display = "none";
     });
 }
 

@@ -31,7 +31,7 @@ body {
     }
 }
 
-#divPi, #divKpoovakan, #divMusic {
+.app {
     outline: none;
     border: 3px solid var(--colorForeground);
     border-radius: 3px;
@@ -46,7 +46,7 @@ body {
     display: block;
 }
 
-#divPiHeader, #divKpoovakanHeader, #divMusicHeader {
+.appHeader {
     background-color: var(--colorAccent);
     color: var(--colorBackground);
     width: 100%;
@@ -56,11 +56,11 @@ body {
     display: flex;
 }
 
-#divPiHeader p, #divKpoovakanHeader p, #divMusicHeader p {
+.appHeader p {
     margin: 0;
 }
 
-#divPiElements, #divKpoovakanElements, #divMusicElements {
+.appElements {
     margin: 13px;
 }
 
@@ -84,7 +84,7 @@ body {
     padding: 0 13px;
 }
 
-#music, #pi, #cool {
+.appIcons {
     margin: inherit;
     margin-right: 13px;
     height: 18px;
@@ -92,7 +92,7 @@ body {
     align-self: center;
 }
 
-#music:hover, #pi:hover, #cool:hover {
+.appIcons:hover {
     cursor: pointer;
 }
 
