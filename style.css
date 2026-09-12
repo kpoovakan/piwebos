@@ -228,3 +228,16 @@ select {
     border: none;
     border-radius: 3px;
 }
+
+.enableJavaScript {
+    background-color: var(--colorBackground);
+    color: var(--colorForeground);
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 31px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
