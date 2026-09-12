@@ -26,11 +26,10 @@ window.addEventListener("load", function() {
     dragElement(document.getElementById("divPi"));
     dragElement(document.getElementById("divKpoovakan"));
     dragElement(document.getElementById("divMusic"));
-
-    //hide divs onload
-    hideDiv("Pi");
-    hideDiv("Kpoovakan");
-    hideDiv("Music");
+    dragElement(document.getElementById("divDesmos"));
+    dragElement(document.getElementById("divMap"));
+    dragElement(document.getElementById("divNotepad"));
+    dragElement(document.getElementById("divFlight"));
 
     //event listeners to open apps
     document.getElementById("pi").addEventListener("click", function() {
@@ -50,6 +49,62 @@ window.addEventListener("load", function() {
         hideHint();*/
         window.location.href = "/chopinetudes";
     });
+    document.getElementById("bible").addEventListener("click", function() {
+        window.location.href = "https://prs.app";
+        hideHint();
+    });
+    document.getElementById("desmos").addEventListener("click", function() {
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divDesmos").style.display;
+        document.getElementById("divDesmos").style.display = switchDisplay[thisCurrent];
+        hideHint();
+    });
+    document.getElementById("file").addEventListener("click", function() {
+        window.location.href = globalThis.hrefFile;
+        hideHint();
+    });
+    document.getElementById("flight").addEventListener("click", function() {
+        window.location.href = "https://map.opensky-network.org/";
+        hideHint();
+    });
+    document.getElementById("mail").addEventListener("click", function() {
+        window.location.href = globalThis.hrefMail;
+        hideHint();
+    });
+    document.getElementById("map").addEventListener("click", function() {
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divMap").style.display;
+        document.getElementById("divMap").style.display = switchDisplay[thisCurrent];
+        hideHint();
+    });
+    document.getElementById("notepad").addEventListener("click", function() {
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divNotepad").style.display;
+        document.getElementById("divNotepad").style.display = switchDisplay[thisCurrent];
+        hideHint();
+    });
+    document.getElementById("turbowarp").addEventListener("click", function() {
+        window.location.href = "https://turbowarp.org/editor";
+        hideHint();
+    });
+    document.getElementById("web").addEventListener("click", function() {
+        window.location.href = "/stickytab";
+        hideHint();
+    });
+
+    // setting up localStorage link settings
+    globalThis.hrefFile = window.localStorage.getItem("piwebosHrefFile");
+    globalThis.hrefMail = window.localStorage.getItem("piwebosHrefMail");
+    globalThis.hrefMap = window.localStorage.getItem("piwebosHrefMap");
+    if(globalThis.hrefFile == null || globalThis.hrefFile == undefined || globalThis.hrefFile == "") {
+        globalThis.hrefFile = "https://drive.google.com";
+    }
+    if(globalThis.hrefMail == null || globalThis.hrefMail == undefined || globalThis.hrefMail == "") {
+        globalThis.hrefMail = "https://mail.google.com";
+    }
+    if(globalThis.hrefMap == null || globalThis.hrefMap == undefined || globalThis.hrefMap == "") {
+        globalThis.hrefMap = "https://maps.google.com";
+    }
 });
 
 
