@@ -6,6 +6,7 @@ window.addEventListener("load", function() {
     //time stuff
     resetTime();
     document.getElementById("settingsTime").value = window.localStorage.getItem("piwebosTime");
+    document.getElementById("settingsAudio").value = window.localStorage.getItem("piwebosAudio");
 
     // date stuff
     const d = new Date();
@@ -245,9 +246,13 @@ function settingsTime(thisElement) {
     resetTime();
 }
 
+function settingsAudio(thisElement) {
+    window.localStorage.setItem("piwebosAudio", thisElement.value);
+}
+
 function clickAudio() {
-    const preferences = window.localStorage.getItem("settingsAudio");
-    if(preferences == 0) {
+    const preferences = window.localStorage.getItem("piwebosAudio");
+    if(preferences == "off") {
         return;
     }
     const effect = new Audio("snap.wav");
