@@ -8,6 +8,7 @@ window.addEventListener("load", function() {
     document.getElementById("settingsTime").value = window.localStorage.getItem("piwebosTime");
 
     // date stuff
+    const d = new Date();
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let year = d.getFullYear();
@@ -32,57 +33,68 @@ window.addEventListener("load", function() {
 
     //event listeners to open apps
     document.getElementById("settings").addEventListener("click", function() {
+        clickAudio();
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divSettings").style.display;
         document.getElementById("divSettings").style.display = switchDisplay[thisCurrent];
         hideHint();
     });
     document.getElementById("pi").addEventListener("click", function() {
+        clickAudio();
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divPi").style.display;
         document.getElementById("divPi").style.display = switchDisplay[thisCurrent];
         hideHint();
     });
     document.getElementById("cool").addEventListener("click", function() {
+        clickAudio();
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divKpoovakan").style.display;
         document.getElementById("divKpoovakan").style.display = switchDisplay[thisCurrent];
         hideHint();
     });
     document.getElementById("music").addEventListener("click", function() {
+        clickAudio();
         /*document.getElementById("divMusic").style.display = "block";
         hideHint();*/
         window.location.href = "/chopinetudes";
     });
     document.getElementById("bible").addEventListener("click", function() {
+        clickAudio();
         window.location.href = "https://prs.app";
         hideHint();
     });
     document.getElementById("desmos").addEventListener("click", function() {
+        clickAudio();
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divDesmos").style.display;
         document.getElementById("divDesmos").style.display = switchDisplay[thisCurrent];
         hideHint();
     });
     document.getElementById("file").addEventListener("click", function() {
+        clickAudio();
         window.location.href = globalThis.hrefFile;
         hideHint();
     });
     document.getElementById("flight").addEventListener("click", function() {
+        clickAudio();
         window.location.href = "https://map.opensky-network.org/";
         hideHint();
     });
     document.getElementById("mail").addEventListener("click", function() {
+        clickAudio();
         window.location.href = globalThis.hrefMail;
         hideHint();
     });
     document.getElementById("map").addEventListener("click", function() {
+        clickAudio();
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divMap").style.display;
         document.getElementById("divMap").style.display = switchDisplay[thisCurrent];
         hideHint();
     });
     document.getElementById("notepad").addEventListener("click", function() {
+        clickAudio();
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divNotepad").style.display;
         document.getElementById("divNotepad").style.display = switchDisplay[thisCurrent];
@@ -90,14 +102,17 @@ window.addEventListener("load", function() {
         hideHint();
     });
     document.getElementById("turbowarp").addEventListener("click", function() {
+        clickAudio();
         window.location.href = "https://turbowarp.org/editor";
         hideHint();
     });
     document.getElementById("web").addEventListener("click", function() {
+        clickAudio();
         window.location.href = "/stickytab";
         hideHint();
     });
     document.getElementById("video").addEventListener("click", function() {
+        clickAudio();
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divVideo").style.display;
         document.getElementById("divVideo").style.display = switchDisplay[thisCurrent];
@@ -182,6 +197,7 @@ function hideHint() {
 }
 
 function hideDiv(divName) {
+    clickAudio();
     document.getElementById("div"+divName).style.display = "none";
     if(divName == "Video") {
         document.getElementById("divVideoElements").innerHTML = "";
@@ -227,4 +243,13 @@ function settingsFile(thisElement) {
 function settingsTime(thisElement) {
     window.localStorage.setItem("piwebosTime", thisElement.value);
     resetTime();
+}
+
+function clickAudio() {
+    const preferences = window.localStorage.getItem("settingsAudio");
+    if(preferences == 0) {
+        return;
+    }
+    const effect = new Audio("snap.wav");
+    effect.play();
 }
