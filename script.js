@@ -1,15 +1,13 @@
 "use strict";
+setInterval(resetTime, 1000);
 
 window.addEventListener("load", function() {
 
     //time stuff
-    const d = new Date();
-    let time = d.getHours();
-    let timeMinutes = d.getMinutes();
-    if(timeMinutes < 10) {
-        timeMinutes = "0" + timeMinutes;
-    }
-    time = time + ":" + timeMinutes;
+    resetTime();
+    document.getElementById("settingsTime").value = window.localStorage.getItem("piwebosTime");
+
+    // date stuff
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let year = d.getFullYear();
@@ -19,7 +17,6 @@ window.addEventListener("load", function() {
     weekday = weekdays[weekday];
     let day = d.getDate();
     let date = weekday + ", " + day + " " + month + " " + year;
-    document.getElementById("time").innerHTML = time;
     document.getElementById("date").innerHTML = date;
 
     //draggable thingies
@@ -89,6 +86,7 @@ window.addEventListener("load", function() {
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divNotepad").style.display;
         document.getElementById("divNotepad").style.display = switchDisplay[thisCurrent];
+        document.getElementById("appNotepad").focus();
         hideHint();
     });
     document.getElementById("turbowarp").addEventListener("click", function() {
@@ -162,6 +160,20 @@ function dragElement(elmnt) {
   }
 }
 
+function resetTime() {
+    const d = new Date();
+    var time = d.getHours();
+    if(window.localStorage.getItem("piwebosTime") == "sanity" && time > 12) {
+        var time = time - 12;
+    }
+    let timeMinutes = d.getMinutes();
+    if(timeMinutes < 10) {
+        timeMinutes = "0" + timeMinutes;
+    }
+    var time = time + ":" + timeMinutes;
+    document.getElementById("time").innerHTML = time;
+}
+
 function hideHint() {
     document.getElementById("hint").setAttribute("class", "hintHide");
     document.getElementById("hint").addEventListener("animationend", function() {
@@ -210,4 +222,9 @@ function settingsFile(thisElement) {
         globalThis.hrefFile = thisElement.value;
         alert("preferences updated!");
     }
+}
+
+function settingsTime(thisElement) {
+    window.localStorage.setItem("piwebosTime", thisElement.value);
+    resetTime();
 }
