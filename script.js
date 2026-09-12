@@ -42,8 +42,9 @@ window.addEventListener("load", function() {
         hideHint();
     });
     document.getElementById("music").addEventListener("click", function() {
-        document.getElementById("divMusic").style.display = "block";
-        hideHint();
+        /*document.getElementById("divMusic").style.display = "block";
+        hideHint();*/
+        window.location.href = "/chopinetudes";
     });
 });
 

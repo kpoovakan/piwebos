@@ -119,6 +119,7 @@ body {
     margin: 0px 3px;
     height: 13px;
     width: auto;
+    vertical-align: middle;
 }
 
 .close:hover {
@@ -127,7 +128,7 @@ body {
 
 .gamesDiv {
     display: flex;
-    margin: 31px;
+    margin: 0;
     float: right;
 }
 
@@ -138,9 +139,16 @@ body {
     transition: transform 0.2s;
     width: 100%;
     height: 100%;
+    padding: 0;
+    display: block;
 }
 
 .games:hover {
     cursor: pointer;
-    transform: scale(1.25);
+    transform: scale(1.0314);
+}
+
+.games img {
+    display: block;
+    margin: 0;
 }
