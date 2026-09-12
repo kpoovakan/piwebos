@@ -94,6 +94,7 @@ body {
 
 .appIcons:hover {
     cursor: pointer;
+    transform: scale(1.314);
 }
 
 #hint {
@@ -162,4 +163,45 @@ iframe {
 .gameEmbed {
     width: 482px;
     height: 412px;
+}
+
+.appVideo {
+    width: 700px;
+    height: 395px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+    display: block;
+}
+
+.appVideo iframe {
+    position: absolute;
+    top: -50px;
+    left: -2px;
+    width: 704px;
+    height: 395px;
+    pointer-events: none;
+    border-radius: 3px;
+    display: block;
+}
+
+.appVideo p {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+input {
+    background-color: var(--colorForeground);
+    color: var(--colorBackground);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    font-family: "Share Tech", sans-serif;
+}
+
+input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
 }

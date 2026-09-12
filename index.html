@@ -68,6 +68,11 @@
             </div>
         </div>
 
+        <div id="divVideo" style="display: none;" class="app">
+            <div id="divVideoHeader" class="appHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Video')"><p>youtube</p></div>
+            <div id="divVideoElements" class="appElements appVideo"></div>
+        </div>
+
         <div id="divPi" style="display: none;" class="app">
             <div id="divPiHeader" class="appHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Pi')"/><p>pi is amazing</p></div>
             <div id="divPiElements" class="appElements">
@@ -93,21 +98,33 @@
             </div>
         </div>
 
+        <div id="divSettings" style="display: none;" class="app">
+            <div id="divSettingsHeader" class="appHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Settings')"><p>settings</p></div>
+            <div id="divSettingsElements" class="appElements">
+                <p>some sites cannot be embedded, so their corresponding webOS<br>app icons will open the site in the browser. you can set<br>preferences for the sites that the app icons will open.</p>
+                <p style="margin: 3px;"><img src="icons/Mail.svg" class="appIcons"/><input type="text" placeholder="https://mail.google.com" onchange="settingsMail(this)"></p>
+                <!--<p style="margin: 3px;"><img src="icons/Map.svg" class="appIcons"><input type="text" placeholder="https://maps.google.com"></p>-->
+                <p style="margin: 3px;"><img src="icons/File.svg" class="appIcons"><input type="text" placeholder="https://drive.google.com" onchange="settingsFile(this)"></p>
+            </div>
+        </div>
+
         <div class="bottom">
             <p><a href="/">kpoovakan.github.io</a></p>
             <p id="date"></p>
             <p id="time"></p>
-            <img src="icons/Kpoovakan.svg" alt="cool stuff" id="cool" class="appIcons" />
+            <img src="icons/Settings.svg" alt="settings" id="settings" class="appIcons" />
             <img src="icons/Bible.svg" alt="open Bible" id="bible" class="appIcons" />
             <img src="icons/Flight.svg" alt="open Flight Tracker" id="flight" class="appIcons" />
             <img src="icons/Map.svg" alt="open maps" id="map" class="appIcons" />
+            <img src="icons/Video.svg" alt="open videos" id="video" class="appIcons" />
             <img src="icons/Music.svg" alt="play music" id="music" class="appIcons" />
             <img src="icons/Turbowarp.svg" alt="open Turbowarp" id="turbowarp" class="appIcons" />
             <img src="icons/Desmos.svg" alt="Desmos calculator" id="desmos" class="appIcons" />
             <img src="icons/Notepad.svg" alt="notepad" id="notepad" class="appIcons" />
             <img src="icons/File.svg" alt="open file management service" id="file" class="appIcons" />
-            <img src="icons/Mail.svg" alt="open e-mail service" id="mail" class="appIcons" />
+            <img src="icons/Mail.svg" alt="open e-mail service" id="mail" class="appIcons" />            
             <img src="icons/Web.svg" alt="new tab or search the web" id="web" class="appIcons" />
+            <img src="icons/Kpoovakan.svg" alt="cool stuff" id="cool" class="appIcons" />
             <img src="icons/Pi.svg" alt="explore pi" id="pi" class="appIcons" />
             <p id="hint">psst.. those icons open the apps > </p>
         </div>

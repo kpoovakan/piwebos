@@ -30,8 +30,16 @@ window.addEventListener("load", function() {
     dragElement(document.getElementById("divMap"));
     dragElement(document.getElementById("divNotepad"));
     dragElement(document.getElementById("divFlight"));
+    dragElement(document.getElementById("divVideo"));
+    dragElement(document.getElementById("divSettings"));
 
     //event listeners to open apps
+    document.getElementById("settings").addEventListener("click", function() {
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divSettings").style.display;
+        document.getElementById("divSettings").style.display = switchDisplay[thisCurrent];
+        hideHint();
+    });
     document.getElementById("pi").addEventListener("click", function() {
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divPi").style.display;
@@ -89,6 +97,17 @@ window.addEventListener("load", function() {
     });
     document.getElementById("web").addEventListener("click", function() {
         window.location.href = "/stickytab";
+        hideHint();
+    });
+    document.getElementById("video").addEventListener("click", function() {
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divVideo").style.display;
+        document.getElementById("divVideo").style.display = switchDisplay[thisCurrent];
+        if(thisCurrent == "none") {
+            document.getElementById("divVideoElements").innerHTML = `<iframe src="https://www.youtube.com/embed/xvFZjo5PgG0?autoplay=1&amp;loop=1&amp;modestbranding=1&amp;controls=0&amp;rel=0" title="muahahahahaha" frameborder="0" allow="autoplay; encrypted-media;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loadinz="eager"></iframe><p><a href="https://youtube.com">tap to open youtube in browser</a></p>`;
+        } else {
+            document.getElementById("divVideoElements").innerHTML = "";
+        }
         hideHint();
     });
 
@@ -152,6 +171,9 @@ function hideHint() {
 
 function hideDiv(divName) {
     document.getElementById("div"+divName).style.display = "none";
+    if(divName == "Video") {
+        document.getElementById("divVideoElements").innerHTML = "";
+    }
 }
 
 function piDigits() {
@@ -162,4 +184,30 @@ function piDigits() {
 function piGame() {
     document.getElementById("piDigits").style.display = "none";
     document.getElementById("piGame").style.display = "block";
+}
+
+function settingsMail(thisElement) {
+    if(thisElement.value == "" || thisElement.value == undefined || thisElement.value == null) {
+        return;
+    } else if (!(thisElement.value.includes("http"))) {
+        alert("please include the HTTP or HTTPS in your URL");
+        return;
+    } else {
+        window.localStorage.setItem("piwebosHrefMail", thisElement.value);
+        globalThis.hrefMail = thisElement.value;
+        alert("preferences updated!");
+    }
+}
+
+function settingsFile(thisElement) {
+    if(thisElement.value == "" || thisElement.value == undefined || thisElement.value == null) {
+        return;
+    } else if (!(thisElement.value.includes("http"))) {
+        alert("please include the HTTP or HTTPS in your URL");
+        return;
+    } else {
+        window.localStorage.setItem("piwebosHrefFile", thisElement.value);
+        globalThis.hrefFile = thisElement.value;
+        alert("preferences updated!");
+    }
 }
