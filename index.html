@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>pi - web OS - kpoovakan</title>
+        <link rel="icon" href="icons/Pi.svg" type="image/svg+xml">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
@@ -39,12 +40,16 @@
         </div>
 
         <div id="divPi" style="display: none;" class="app">
-            <div id="divPiHeader" class="appHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Pi')"/><p>digits of pi</p></div>
+            <div id="divPiHeader" class="appHeader"><img src="close.svg" alt="close" class="close" onclick="hideDiv('Pi')"/><p>pi is amazing</p></div>
             <div id="divPiElements" class="appElements">
                 <p style="width: 100%; text-align: right;">
-                    <a href="/pumpkinpi">pi memorizing game</a>⠀⠀
-                    <a href="https://scratch.mit.edu/projects/1285004431/">pie baking game</a></p>
-                <p>The first <a href="https://3.141592653.com/">314 digits of pi</a>: <br>
+                    <a href="javascript:void(0);" onclick="piDigits();">digits of pi</a>⠀⠀
+                    <a href="javascript:void(0);" onclick="piGame();">pie baking game</a></p>
+                <p id="piGame" style="display: none; position: relative;">
+                    <iframe src="https://turbowarp.org/1285004431/embed/" allowfullscren="" class="gameEmbed" loading="lazy" style="border: none; vertical-align: top; position: relative;"></iframe>
+                    <a href="https://scratch.mit.edu/projects/1285004431/fullscreen/" style="position: absolute; top: 13px; right: 0;">play game in fullscreen</a>
+                </p>
+                <p id="piDigits" style="display: none;">The first <a href="https://3.141592653.com/">314 digits of pi</a>: <br>
                     3.14159265358979323846264338327950
                     <br>2884197169399375105820974944592307
                     <br>8164062862089986280348253421170679
@@ -64,9 +69,18 @@
             <p id="date"></p>
             <p id="time"></p>
             <img src="icons/Kpoovakan.svg" alt="cool stuff" id="cool" class="appIcons" />
+            <img src="icons/Bible.svg" alt="open Bible" id="bible" class="appIcons" />
+            <img src="icons/Flight.svg" alt="open Flight Tracker" id="flight" class="appIcons" />
+            <img src="icons/Map.svg" alt="open maps" id="map" class="appIcons" />
             <img src="icons/Music.svg" alt="play music" id="music" class="appIcons" />
+            <img src="icons/Turbowarp.svg" alt="open Turbowarp" id="turbowarp" class="appIcons" />
+            <img src="icons/Desmos.svg" alt="Desmos calculator" id="desmos" class="appIcons" />
+            <img src="icons/Notepad.svg" alt="notepad" id="notepad" class="appIcons" />
+            <img src="icons/File.svg" alt="open file management service" id="file" class="appIcons" />
+            <img src="icons/Mail.svg" alt="open e-mail service" id="mail" class="appIcons" />
+            <img src="icons/Web.svg" alt="new tab or search the web" id="web" class="appIcons" />
             <img src="icons/Pi.svg" alt="explore pi" id="pi" class="appIcons" />
-            <p id="hint">psst.. those icons open the apps --> </p>
+            <p id="hint">psst.. those icons open the apps > </p>
         </div>
     </body>
 </html>

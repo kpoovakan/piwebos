@@ -98,3 +98,13 @@ function hideHint() {
 function hideDiv(divName) {
     document.getElementById("div"+divName).style.display = "none";
 }
+
+function piDigits() {
+    document.getElementById("piGame").style.display = "none";
+    document.getElementById("piDigits").style.display = "block";
+}
+
+function piGame() {
+    document.getElementById("piDigits").style.display = "none";
+    document.getElementById("piGame").style.display = "block";
+}

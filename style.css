@@ -152,3 +152,14 @@ body {
     display: block;
     margin: 0;
 }
+
+iframe {
+    border: 2px solid var(--colorAccent);
+    border-radius: 3px;
+    outline: none;
+}
+
+.gameEmbed {
+    width: 482px;
+    height: 412px;
+}
