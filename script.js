@@ -3,23 +3,15 @@ setInterval(resetTime, 1000);
 
 window.addEventListener("load", function() {
 
+    //audio stuff
+    document.getElementById("settingsAudio").value = window.localStorage.getItem("piwebosAudio");
+
     //time stuff
     resetTime();
     document.getElementById("settingsTime").value = window.localStorage.getItem("piwebosTime");
-    document.getElementById("settingsAudio").value = window.localStorage.getItem("piwebosAudio");
 
-    // date stuff
-    const d = new Date();
-    let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    let year = d.getFullYear();
-    let month = d.getMonth();
-    month = months[month];
-    let weekday = d.getDay();
-    weekday = weekdays[weekday];
-    let day = d.getDate();
-    let date = weekday + ", " + day + " " + month + " " + year;
-    document.getElementById("date").innerHTML = date;
+    //date stuff
+    resetDate();
 
     //draggable thingies
     dragElement(document.getElementById("divPi"));
@@ -188,6 +180,23 @@ function resetTime() {
     }
     var time = time + ":" + timeMinutes;
     document.getElementById("time").innerHTML = time;
+    if(time == "0:00") {
+        resetDate();
+    }
+}
+
+function resetDate() {
+    const d = new Date();
+    let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    let year = d.getFullYear();
+    let month = d.getMonth();
+    month = months[month];
+    let weekday = d.getDay();
+    weekday = weekdays[weekday];
+    let day = d.getDate();
+    let date = weekday + ", " + day + " " + month + " " + year;
+    document.getElementById("date").innerHTML = date;
 }
 
 function hideHint() {
