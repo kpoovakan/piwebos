@@ -68,9 +68,10 @@ window.addEventListener("load", function() {
     });
     document.getElementById("music").addEventListener("click", function() {
         clickAudio();
-        /*document.getElementById("divMusic").style.display = "block";
-        hideHint();*/
-        window.location.href = "/chopinetudes";
+        const switchDisplay = { block:"none", none:"block" };
+        var thisCurrent = document.getElementById("divMusic").style.display;
+        document.getElementById("divMusic").style.display = switchDisplay[thisCurrent];
+        hideHint();
     });
     document.getElementById("bible").addEventListener("click", function() {
         clickAudio();
