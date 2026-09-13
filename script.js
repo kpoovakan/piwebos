@@ -1,6 +1,10 @@
 "use strict";
 setInterval(resetTime, 1000);
 
+
+
+// basic utilities
+
 window.addEventListener("load", function() {
 
     //audio stuff
@@ -144,7 +148,6 @@ window.addEventListener("load", function() {
     }
 });
 
-
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   document.getElementById(elmnt.id + "Header").onmousedown = dragMouseDown;
@@ -228,6 +231,10 @@ function hideDiv(divName) {
     }
 }
 
+
+
+// functions for pi app
+
 function piDigits() {
     document.getElementById("piGame").style.display = "none";
     document.getElementById("piDigits").style.display = "block";
@@ -237,6 +244,10 @@ function piGame() {
     document.getElementById("piDigits").style.display = "none";
     document.getElementById("piGame").style.display = "block";
 }
+
+
+
+// functions for settings app
 
 function settingsMail(thisElement) {
     if(thisElement.value == "" || thisElement.value == undefined || thisElement.value == null) {
@@ -277,6 +288,10 @@ function settingsPiAudio(thisElement) {
     window.localStorage.setItem("piwebosPiAudio", thisElement.value);
 }
 
+
+
+// functions to play audio sound effects
+
 function clickAudio() {
     const toPlay = window.localStorage.getItem("piwebosPiAudio");
     if(toPlay == "pi") {
@@ -303,6 +318,10 @@ function piAudio() {
         toPlay.play();
     }
 }
+
+
+
+// functions for games app
 
 function gamesMenu() {
     const menu = `
