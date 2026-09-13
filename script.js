@@ -55,6 +55,7 @@ window.addEventListener("load", function() {
         const switchDisplay = { block:"none", none:"block" };
         var thisCurrent = document.getElementById("divKpoovakan").style.display;
         document.getElementById("divKpoovakan").style.display = switchDisplay[thisCurrent];
+        gamesMenu();
         hideHint();
     });
     document.getElementById("music").addEventListener("click", function() {
@@ -222,6 +223,8 @@ function hideDiv(divName) {
     document.getElementById("div"+divName).style.display = "none";
     if(divName == "Video") {
         document.getElementById("divVideoElements").innerHTML = "";
+    } else if(divName == "Kpoovakan") {
+        gamesMenu();
     }
 }
 
@@ -299,4 +302,26 @@ function piAudio() {
         const toPlay = new Audio(`audio/${digitPlay}.wav`);
         toPlay.play();
     }
+}
+
+function gamesMenu() {
+    const menu = `
+    <div class="gamesDiv">
+        <a href="javascript:void(0);" class="games" onclick="games('1210100138')"><img src="https://uploads.scratch.mit.edu/get_image/project/1210100138_480x360.png"></a>
+        <a href="javascript:void(0);" class="games" onclick="games('1285004431')"><img src="https://uploads.scratch.mit.edu/get_image/project/1285004431_480x360.png"></a>
+    </div><br><div class="gamesDiv">
+        <a href="javascript:void(0);" class="games" onclick="games('1351487347')"><img src="https://uploads.scratch.mit.edu/get_image/project/1351487347_480x360.png"></a>
+        <a href="javascript:void(0);" class="games" onclick="games('1268780260')"><img src="https://uploads.scratch.mit.edu/get_image/project/1268780260_480x360.png"></a>
+    </div>
+    `;
+    document.getElementById("gamesContent").innerHTML = menu;
+}
+
+function games(projectID) {
+    if(projectID == "1210100138") {
+        var element = `<div style="display: block; position: relative;"><iframe src="https://turbowarp.org/${projectID}/embed" allowfullscren="" class="gameEmbed" loading="lazy" style="border: none; vertical-align: top; position: relative;"></iframe><p style="position: absolute; top: 13px; right: 0; margin: 0;"><a href="javascript:void(0);" onclick="gamesMenu()">return to menu</a> or <a href="/harvest">play in fullscreen</a></p></div>`;
+    } else {
+        var element = `<div style="display: block; position: relative;"><iframe src="https://turbowarp.org/${projectID}/embed" allowfullscren="" class="gameEmbed" loading="lazy" style="border: none; vertical-align: top; position: relative;"></iframe><p style="position: absolute; top: 13px; right: 0; margin: 0;"><a href="javascript:void(0);" onclick="gamesMenu()">return to menu</a> or <a href="https://scratch.mit.edu/projects/${projectID}/fullscreen/">play in fullscreen</a></p></div>`;
+    }
+    document.getElementById("gamesContent").innerHTML = element;
 }
