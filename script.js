@@ -1,13 +1,17 @@
 "use strict";
-setInterval(resetTime, 1000);
 
 
 
 // basic utilities
 
+setInterval(resetTime, 1000);
+
 window.addEventListener("load", function() {
 
-    //audio stuff
+    // notepad stuff
+    document.getElementById("appNotepad").value = window.localStorage.getItem("piwebosNotepad");
+
+    // audio stuff
     document.getElementById("settingsAudio").value = window.localStorage.getItem("piwebosAudio");
     if(document.getElementById("settingsAudio").value == "") {
         document.getElementById("settingsAudio").value = "on";
@@ -18,17 +22,17 @@ window.addEventListener("load", function() {
     }
     globalThis.thisDigit = -1;
 
-    //time stuff
+    // time stuff
     resetTime();
     document.getElementById("settingsTime").value = window.localStorage.getItem("piwebosTime");
     if(document.getElementById("settingsTime").value == "") {
         document.getElementById("settingsTime").value = "sanity";
     }
 
-    //date stuff
+    // date stuff
     resetDate();
 
-    //draggable thingies
+    // draggable thingies
     dragElement(document.getElementById("divPi"));
     dragElement(document.getElementById("divKpoovakan"));
     dragElement(document.getElementById("divMusic"));
@@ -39,7 +43,7 @@ window.addEventListener("load", function() {
     dragElement(document.getElementById("divVideo"));
     dragElement(document.getElementById("divSettings"));
 
-    //event listeners to open apps
+    // event listeners to open apps
     document.getElementById("settings").addEventListener("click", function() {
         clickAudio();
         const switchDisplay = { block:"none", none:"block" };
@@ -343,4 +347,12 @@ function games(projectID) {
         var element = `<div style="display: block; position: relative;"><iframe src="https://turbowarp.org/${projectID}/embed" allowfullscren="" class="gameEmbed" loading="lazy" style="border: none; vertical-align: top; position: relative;"></iframe><p style="position: absolute; top: 13px; right: 0; margin: 0;"><a href="javascript:void(0);" onclick="gamesMenu()">return to menu</a> or <a href="https://scratch.mit.edu/projects/${projectID}/fullscreen/">play in fullscreen</a></p></div>`;
     }
     document.getElementById("gamesContent").innerHTML = element;
+}
+
+
+
+// functions for notepad app
+
+function notepad(thisElement) {
+    window.localStorage.setItem("piwebosNotepad", thisElement.value);
 }
